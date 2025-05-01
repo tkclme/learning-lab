@@ -1,9 +1,8 @@
-def all_int(exception: int, ensemble:range):
+def all_int(exception:int, range=range(1, 21)):
     ints = []
     multiples = []
-    for n in ensemble:
-        multiples.append(n*exception)
-        ints.append(n) if n not in multiples else multiples.remove(n)
+    for n in range:
+        multiples.append(n) if (exception*n) == n*2 else ints.append(n)
+    print(multiples)
     return ints
-        
-print(all_int(3, range(1, 21)))
+print(all_int(exception=3)) 
