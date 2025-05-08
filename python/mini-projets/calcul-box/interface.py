@@ -24,8 +24,3 @@ def afficher_erreur(entrée) -> str:
 
 def verifier_entrée(entrée_reçu, entrée_voulu: list) -> bool:
     return True if entrée_reçu in entrée_voulu else False
-
-
-""" Titre & Info """
-
-TITRE = "\t====== Calcul Box ======\n"
