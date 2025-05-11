@@ -1,5 +1,3 @@
-from interface import demander_nombre, demander_operateur
-
 class Calculator:
     def __init__(self):
         self.operator = ""
@@ -8,23 +6,24 @@ class Calculator:
         self.total = 0
 
 
-    def ajouter_nbr(self):
-        self.nbr = demander_nombre()
-        if str(self.nbr).isdecimal():
-            self.calcul.append(self.nbr)
-        else:
-            self.calcul.append(format((self.nbr), ".2f"))
-        self.calculer()
+    def add_nbr(self, nbr):
+        self.nbr = nbr
+        self.calcul.append(nbr)
 
 
-    def ajouter_operateur(self):
-        self.operator = demander_operateur()
+    def add_operator(self, operator):
+        self.operator = operator
         self.calcul.append(self.operator)
 
 
-    def reset_operateur(self):
-        """ Vide la var operateur en fin de calcul """
-        self.operator = ""
+    def reset(self, reset_commands):
+        """ Clean calculator """
+        if self.nbr in reset_commands or self.operator in reset_commands:
+            self.operator = ""
+            self.nbr = 0
+            self.calcul = []
+            self.total = 0
+
 
 
     def calculer(self):

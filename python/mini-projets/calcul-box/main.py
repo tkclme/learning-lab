@@ -1,15 +1,13 @@
-from controller import afficher
+from controller import loop_nbr, loop_operator
 from calculator import Calculator
+
 
 
 def main():
     calcul_box = Calculator()
     while True:
-        afficher(calcul_box)
-        calcul_box.ajouter_nbr()
-
-        afficher(calcul_box)
-        calcul_box.ajouter_operateur()
+        loop_nbr(calcul_box)
+        loop_operator(calcul_box)
 
 
 
