@@ -2,18 +2,18 @@ class Calculator:
     def __init__(self):
         self.operator = ""
         self.nbr = 0
-        self.calcul = []
+        self.calculation = []
         self.total = 0
 
 
     def add_nbr(self, nbr):
         self.nbr = nbr
-        self.calcul.append(nbr)
+        self.calculation.append(nbr)
 
 
     def add_operator(self, operator):
         self.operator = operator
-        self.calcul.append(self.operator)
+        self.calculation.append(self.operator)
 
 
     def reset(self, reset_commands):
@@ -21,12 +21,11 @@ class Calculator:
         if self.nbr in reset_commands or self.operator in reset_commands:
             self.operator = ""
             self.nbr = 0
-            self.calcul = []
+            self.calculation = []
             self.total = 0
 
 
-
-    def calculer(self):
+    def calculate(self):
         match self.operator:
             case "+":
                 self.total = self.total + self.nbr
@@ -39,14 +38,14 @@ class Calculator:
 
             case "/":
                 self.total = self.total / self.nbr
-            # If there no operator
+            # When starting without operator
             case _:
                 self.total = self.nbr
 
 
     def to_string(self) -> str:
-        """ change calcul list to string """
+        """ change calculation list to string """
         string = str()
-        for item in self.calcul:
+        for item in self.calculation:
             string = string+str(item)
         return string

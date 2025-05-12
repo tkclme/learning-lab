@@ -1,5 +1,5 @@
 from utils import check_str
-from const import OPERATORS, RESET_BTN, ERROR_OPERATOR, ERROR_NUMBER
+from const import OPERATORS, RESET_CMDS, ERROR_OPERATOR, ERROR_NUMBER
 
 # === In ===
 
@@ -9,13 +9,13 @@ def get_nbr():
         user_input = input("\n\tNumber:  ").strip()
         if check_str(user_input, digit=True):
             return int(user_input) if user_input.isdecimal() else round(float(user_input), 2)
-        elif check_str(user_input, checkList=RESET_BTN):
+        elif check_str(user_input, checkList=RESET_CMDS):
             return user_input
 
 
 def get_operator():
         user_input = input(f"\n\tOperator ? {OPERATORS}: ").strip()
-        if check_str(user_input, checkList=OPERATORS+RESET_BTN):
+        if check_str(user_input, checkList=OPERATORS+RESET_CMDS):
             return user_input
 
 

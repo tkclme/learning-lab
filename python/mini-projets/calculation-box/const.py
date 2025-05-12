@@ -1,12 +1,12 @@
 """ Title & Info """
 
-TITLE = "\t====== Calcul Box ======\n"
+TITLE = "\t====== Calculation Box ======\n"
 
 INFO = "\t--- Use \"r\" to reset ---\n"
 
 OPERATORS = ["+", "-", "*", "/"]
 
-RESET_BTN = ["r", "R"]
+RESET_CMDS = ["r", "R"]
 
 ERROR_OPERATOR = """
 \t\tError!

@@ -1,4 +1,4 @@
-from const import TITLE, INFO, RESET_BTN
+from const import TITLE, INFO, RESET_CMDS
 
 from interface import display_total, display_calcul, get_nbr, get_operator, error
 import os
@@ -24,8 +24,8 @@ def loop_nbr(box):
         nbr = get_nbr()
         if nbr:
             box.add_nbr(nbr)
-            box.reset(RESET_BTN)
-            box.calculer()
+            box.reset(RESET_CMDS)
+            box.calculate()
             break
         else: issue = error(error_number=True)
 
@@ -38,7 +38,7 @@ def loop_operator(box):
         operator = get_operator()
         if operator:
             box.add_operator(operator)
-            box.reset(RESET_BTN)
+            box.reset(RESET_CMDS)
             break
         else:
             issue = error(error_operator=True)
