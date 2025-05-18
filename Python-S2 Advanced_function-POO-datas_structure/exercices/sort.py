@@ -1,26 +1,16 @@
 # Ecris une fonction qui trie une liste
-import unittest
 
-def sort(iteration) -> list:
-    iteration_copy = iteration.copy()
-    sorted = []
-    index = len(iteration) -1
-
+def mySortFunction(iteration) -> list:
+    liste = iteration.copy()
+    sorted_liste = []
+    index = len(liste)
     for i in range(index):
         for j in range(index):
-            if iteration[i] < iteration_copy[j]:
-                sorted.append[iteration[i]]
+            if liste[i] < liste[j]:
+                continue
+            else: 
                 break
-            else : greater = iteration[i]
-    return sorted.append(greater)
-
-class TestSortFunction(unittest.TestCase):
-
-    def test_sort(self):
-        self.assertEqual(first=self.sort([9, 3, 7]), second=[3, 7, 9], msg="Sorted!")
-        #self.assertEqual(self.sort([18, 43, 8]), [8, 18, 43])
-        #self.assertEqual(self.sort([7, 4, 28, 5, 10, 1]), [1, 4, 5, 7, 10, 28])
-
-
-if __name__ == '__sort__':
-    unittest.sort()
+            sorted_liste.append(liste[i])
+    return sorted_liste
+a = [9, 5, 7, 3, 1]
+print(mySortFunction(a))
